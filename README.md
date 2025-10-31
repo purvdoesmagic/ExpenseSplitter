@@ -14,45 +14,49 @@ This project challenges the outdated perception of Java GUIs by showcasing a **b
   Name your group on startup and begin tracking expenses instantly.
 
 - ➕ **Effortless Member Management**  
-  Add members seamlessly with real-time UI updates.
+  Add, edit, or remove members seamlessly with real-time updates.
 
 - 💰 **Intuitive Expense Logging**  
-  Log who paid, for what, how much, and who should share the cost.
+  Record who paid, for what, how much, and who should share the cost.
 
 - ⚖️ **Flexible & Fair Splitting**  
   Split costs equally or selectively between specific members.
 
 - 🔁 **Smart Settlement Suggestions**  
-  Get the **most efficient set of transactions** to settle debts.
+  Automatically generate the **minimum number of transactions** needed to settle debts.
 
-- 💾 **Save & Load Sessions**  
-  Persist your group data using custom `.esg` files (via Java Serialization).
+- 💾 **Persistent Data Storage**  
+  Save and load your entire group using `.esg` files (via Java Serialization).
 
-- 🎨 **Modern UX in Java Swing**  
-  Fast, fluid, and clean user experience — unlike typical Swing apps.
+- 🧹 **Full Reset Option**  
+  Start fresh anytime with the “Clear All Data” feature — wipes all groups, members, and expenses.
+
+- 🌗 **Dual Theme Support**  
+  Toggle between light and dark mode instantly with smooth theme transitions.
 
 ---
 
 ## 🖌️ UI & UX Design
 
-- 🌚 **Minimalist Dark Theme** — Professional dark interface with a vibrant green accent.  
-- 🧱 **Custom Components** — Rounded `JPanel`, `JTextField`, and more, all hand-painted.  
-- 🎯 **Interactive Feedback** — Subtle hover effects and transitions for responsiveness.  
-- 🧑‍🎨 **Vector Icons** — Clean and modern icons to match the dark aesthetic.  
-- 🅰️ **Typography** — Uses **Inter** and **JetBrains Mono** for clarity and readability.  
-- 💬 **Styled Dialogs** — Consistent dark-mode `JOptionPane` dialogs.
+- 🌚 **Minimalist Dark Theme** — Professional dark interface with vibrant green accents.  
+- 🌞 **Light Theme** — Clean white panels with gray controls for a classic Swing look.  
+- 🧱 **Custom Components** — Rounded panels, text fields, and scrollbars built for a polished modern UI.  
+- 🎯 **Interactive Feedback** — Subtle hover effects and focus transitions for responsiveness.  
+- 🧑‍🎨 **Vector Icons** — Flat, scalable icons matching the interface tone.  
+- 🅰️ **Typography** — Uses *Inter* and *JetBrains Mono* for readability and style.  
+- 💬 **Styled Dialogs** — All dialogs adapt to the current theme automatically.
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Layer         | Technology             |
-|---------------|------------------------|
-| Language      | Java (JDK 8+)          |
-| UI Framework  | Java Swing             |
+| Layer         | Technology                  |
+|---------------|-----------------------------|
+| Language      | Java (JDK 8+)               |
+| UI Framework  | Java Swing                  |
 | Architecture  | MVC (Model-View-Controller) |
-| Persistence   | Java Serialization     |
-| Fonts         | Inter, JetBrains Mono  |
+| Persistence   | Java Serialization          |
+| Fonts         | Inter, JetBrains Mono       |
 
 ---
 
@@ -63,10 +67,10 @@ Expense-Splitter/
 └── src/
     └── com/
         └── expensesplitter/
-            ├── gui/                 # UI panels for main app views
-            │   ├── ExpensesView.java
+            ├── gui/                 # GUI panels for all app views
             │   ├── DashboardView.java
             │   ├── MembersView.java
+            │   ├── ExpensesView.java
             │   ├── SummaryView.java
             │   └── MainFrame.java
             │
@@ -74,21 +78,21 @@ Expense-Splitter/
             │   └── ExpenseSplitter.java
             │
             ├── model/               # Core data models
-            │   ├── Expense.java
+            │   ├── Person.java
             │   ├── Group.java
-            │   └── Person.java
+            │   └── Expense.java
             │
-            ├── service/             # Business logic & calculations
+            ├── service/             # Logic for splitting expenses
             │   ├── SplitService.java
             │   └── SimpleSplitService.java
             │
-            ├── ui/                  # UI utilities and custom styles
-            │   ├── IconFactory.java
+            ├── ui/                  # Custom UI components & theme
             │   ├── UITheme.java
+            │   ├── IconFactory.java
             │   └── components/
             │       ├── RoundedPanel.java
             │       ├── RoundedTextField.java
             │       └── CustomScrollBarUI.java
             │
-            └── util/                # Utilities for file I/O, etc.
+            └── util/                # File handling & data persistence
                 └── DataManager.java
