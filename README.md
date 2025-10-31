@@ -127,44 +127,42 @@ Performs serialization and deserialization for saving and loading sessions.
 
 ---
 
-## 📁 Project Structure  
+## 📁 Project Structure
 
+```plaintext
 Expense-Splitter/
 └── src/
-└── com/
-└── expensesplitter/
-├── gui/
-│ ├── DashboardView.java
-│ ├── ExpensesView.java
-│ ├── MembersView.java
-│ ├── SummaryView.java
-│ └── MainFrame.java
-│
-├── main/
-│ └── ExpenseSplitter.java
-│
-├── model/
-│ ├── Expense.java
-│ ├── Group.java
-│ └── Person.java
-│
-├── service/
-│ ├── SplitService.java
-│ └── SimpleSplitService.java
-│
-├── ui/
-│ ├── UITheme.java
-│ ├── IconFactory.java
-│ └── components/
-│ ├── RoundedPanel.java
-│ ├── RoundedTextField.java
-│ └── CustomScrollBarUI.java
-│
-└── util/
-└── DataManager.java
-
-yaml
-Copy code
+    └── com/
+        └── expensesplitter/
+            ├── gui/                 # All GUI panels
+            │   ├── DashboardView.java
+            │   ├── MembersView.java
+            │   ├── ExpensesView.java
+            │   ├── SummaryView.java
+            │   └── MainFrame.java
+            │
+            ├── main/                # Application entry point
+            │   └── ExpenseSplitter.java
+            │
+            ├── model/               # Data models
+            │   ├── Group.java
+            │   ├── Person.java
+            │   └── Expense.java
+            │
+            ├── service/             # Splitting and calculation logic
+            │   ├── SplitService.java
+            │   └── SimpleSplitService.java
+            │
+            ├── ui/                  # Themes and custom UI components
+            │   ├── UITheme.java
+            │   ├── IconFactory.java
+            │   └── components/
+            │       ├── RoundedPanel.java
+            │       ├── RoundedTextField.java
+            │       └── CustomScrollBarUI.java
+            │
+            └── util/                # Utilities
+                └── DataManager.java
 
 ---
 
