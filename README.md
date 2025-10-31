@@ -135,7 +135,6 @@ Expense-Splitter/
     └── com/
         └── expensesplitter/
             ├── gui/                 # All GUI panels
-            │   ├── DashboardView.java
             │   ├── MembersView.java
             │   ├── ExpensesView.java
             │   ├── SummaryView.java
