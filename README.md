@@ -1,122 +1,43 @@
-# 💸 Expense-Splitter — Modern Java Swing Desktop App
-
-A sleek, modern **desktop application for splitting group expenses**, built entirely with **Java Swing**.  
-This project demonstrates how Swing can still deliver **clean, modern, and efficient UIs** when structured well.
-
-> 🎯 Perfect for trips, roommates, college events, or any group activity where expenses need to be divided fairly.
 
 ---
 
-## 🚀 Key Features
+## 🧠 How the Application Works  
 
-### 🧭 1. Group Creation
-- Create a **new group** when launching the app.  
-- Each group acts as a workspace with its own members and expense list.
-
-### 👥 2. Member Management
-- Add or remove members dynamically.  
-- Member list updates instantly across all views (Members, Expenses, Summary).  
-- Each member is stored as a serialized object for persistence.
-
-### 💰 3. Expense Tracking
-- Record detailed expenses with:
-  - Expense name  
-  - Payer  
-  - Amount  
-  - People sharing that expense  
-- Expenses are linked to their group and saved persistently.
-
-### ⚖️ 4. Intelligent Splitting Logic
-- Uses `SimpleSplitService` for precise and optimized settlement calculations.  
-- Automatically computes **who owes whom**, minimizing total transactions.
-
-### 📊 5. Detailed Summary View
-- Displays a full table of:
-  - All members and their net balances  
-  - Each expense contribution  
-  - Simplified list of settlement transactions  
-- Designed for clarity and presentation — perfect for showing in a demo.
-
-### 💾 6. Persistent Data Storage
-- Uses `DataManager` (Java Serialization) to save and load `.esg` files.  
-- Data remains intact even after closing the app.  
-- You can manually save, load, or clear all data.
-
-### 🔁 7. Full Reset Option
-- “Clear All Data” instantly deletes **everything** — groups, members, and expenses.  
-- Reloads the app with a clean state for testing or new groups.
-
-### 🌗 8. Dual Theme Support
-- **Light Theme:** Classic white panels, gray background (your chosen GUI reference).  
-- **Dark Theme:** Elegant dark interface with green accent and smooth transitions.  
-- Toggle instantly without restarting.
-
-### 🎨 9. Modern Swing Interface
-- Polished, consistent layout using `BorderLayout`, `FlowLayout`, and `CardLayout`.  
-- Consistent component sizing (equal-length buttons).  
-- Custom UI utilities like rounded text fields, scrollbars, and panels.  
-- Styled dialogs for light/dark theme consistency.
+1. **Step 1:** Launch the application and create a new group.  
+2. **Step 2:** Add members through the “Members” tab.  
+3. **Step 3:** Record expenses under the “Expenses” tab.  
+4. **Step 4:** The system calculates balances and displays them in “Summary.”  
+5. **Step 5:** Save, load, or reset data as required.  
 
 ---
 
-## 🖥️ User Interface Highlights
+## 🪶 Future Enhancements  
 
-| View | Description |
-|------|--------------|
-| **Dashboard View** | Central navigation for all features |
-| **Members View** | Manage group members with live updates |
-| **Expenses View** | Add, edit, and review expenses |
-| **Summary View** | View balances and optimized settlements |
-
-The **“View Summary”** button is available from both the Dashboard and the Expenses panel (bottom-aligned).
+- 📊 Integrate **visual charts and graphs** in the Summary view.  
+- ☁️ Implement **cloud backup & sync** using Firebase or JSON APIs.  
+- 💬 Add **notes or comments** to each expense.  
+- 🧾 Enable **PDF or Excel export** of reports.  
+- 📱 Develop a **JavaFX or Compose Desktop** version for modern UI.  
 
 ---
 
-## 🛠️ Technical Overview
-
-| Layer | Description |
-|--------|--------------|
-| **Model** | Data classes for Group, Person, and Expense |
-| **View (GUI)** | Swing panels organized via `MainFrame` |
-| **Service** | Logic for splitting, settlements, and validation |
-| **Util** | File handling, saving/loading group data |
-| **UI** | Theme management, icons, and custom UI components |
+## 📷 Snapshots  
+<img width="1919" height="1015" alt="Screenshot 2025-10-31 151323" src="https://github.com/user-attachments/assets/13d41134-e217-4638-aa89-f5cb5df6221c" />
+<img width="1918" height="1018" alt="Screenshot 2025-10-31 151346" src="https://github.com/user-attachments/assets/8ccd2788-3e31-490d-b59c-baed02c6724e" />
+<img width="1919" height="1019" alt="Screenshot 2025-10-31 151356" src="https://github.com/user-attachments/assets/5fec1c00-6664-4e8e-8fc6-bf4d9f65522a" />
 
 ---
 
-## 📁 Project Structure
+## 🏁 Conclusion  
 
-```plaintext
-Expense-Splitter/
-└── src/
-    └── com/
-        └── expensesplitter/
-            ├── gui/                 # All GUI Panels
-            │   ├── DashboardView.java
-            │   ├── MembersView.java
-            │   ├── ExpensesView.java
-            │   ├── SummaryView.java
-            │   └── MainFrame.java
-            │
-            ├── main/                # Application Entry Point
-            │   └── ExpenseSplitter.java
-            │
-            ├── model/               # Core Data Models
-            │   ├── Person.java
-            │   ├── Group.java
-            │   └── Expense.java
-            │
-            ├── service/             # Splitting and Calculation Logic
-            │   ├── SplitService.java
-            │   └── SimpleSplitService.java
-            │
-            ├── ui/                  # UI Theme & Components
-            │   ├── UITheme.java
-            │   ├── IconFactory.java
-            │   └── components/
-            │       ├── RoundedPanel.java
-            │       ├── RoundedTextField.java
-            │       └── CustomScrollBarUI.java
-            │
-            └── util/                # File Handling
-                └── DataManager.java
+The **Expense-Splitter** project demonstrates the effective use of **Java Swing** in building an interactive, persistent, and visually polished desktop application.  
+It emphasizes modular programming, data management, and clean user interface principles.  
+Beyond academic evaluation, this project serves as a practical, real-world solution for fair and transparent expense management.  
+
+---
+
+## 🙌 Acknowledgements  
+
+Developed by **Purv Doshi**  
+Department of **Electronics and Computer Engineering**  
+*(Submitted as part of academic project work)*  
