@@ -1,62 +1,86 @@
 # 💸 Expense-Splitter — Modern Java Swing Desktop App
 
-A sleek, modern **desktop application for splitting group expenses**, built entirely with **Java Swing** from the ground up.
+A sleek, modern **desktop application for splitting group expenses**, built entirely with **Java Swing**.  
+This project demonstrates how Swing can still deliver **clean, modern, and efficient UIs** when structured well.
 
-This project challenges the outdated perception of Java GUIs by showcasing a **beautiful, minimalist, dark-themed interface** packed with real-world functionality.
-
-> 🎯 Perfect for roommates, trips, events, or any group activity where expenses need splitting.
-
----
-
-## 🚀 Features at a Glance
-
-- ✅ **Dynamic Group Creation**  
-  Name your group on startup and begin tracking expenses instantly.
-
-- ➕ **Effortless Member Management**  
-  Add, edit, or remove members seamlessly with real-time updates.
-
-- 💰 **Intuitive Expense Logging**  
-  Record who paid, for what, how much, and who should share the cost.
-
-- ⚖️ **Flexible & Fair Splitting**  
-  Split costs equally or selectively between specific members.
-
-- 🔁 **Smart Settlement Suggestions**  
-  Automatically generate the **minimum number of transactions** needed to settle debts.
-
-- 💾 **Persistent Data Storage**  
-  Save and load your entire group using `.esg` files (via Java Serialization).
-
-- 🧹 **Full Reset Option**  
-  Start fresh anytime with the “Clear All Data” feature — wipes all groups, members, and expenses.
-
-- 🌗 **Dual Theme Support**  
-  Toggle between light and dark mode instantly with smooth theme transitions.
+> 🎯 Perfect for trips, roommates, college events, or any group activity where expenses need to be divided fairly.
 
 ---
 
-## 🖌️ UI & UX Design
+## 🚀 Key Features
 
-- 🌚 **Minimalist Dark Theme** — Professional dark interface with vibrant green accents.  
-- 🌞 **Light Theme** — Clean white panels with gray controls for a classic Swing look.  
-- 🧱 **Custom Components** — Rounded panels, text fields, and scrollbars built for a polished modern UI.  
-- 🎯 **Interactive Feedback** — Subtle hover effects and focus transitions for responsiveness.  
-- 🧑‍🎨 **Vector Icons** — Flat, scalable icons matching the interface tone.  
-- 🅰️ **Typography** — Uses *Inter* and *JetBrains Mono* for readability and style.  
-- 💬 **Styled Dialogs** — All dialogs adapt to the current theme automatically.
+### 🧭 1. Group Creation
+- Create a **new group** when launching the app.  
+- Each group acts as a workspace with its own members and expense list.
+
+### 👥 2. Member Management
+- Add or remove members dynamically.  
+- Member list updates instantly across all views (Members, Expenses, Summary).  
+- Each member is stored as a serialized object for persistence.
+
+### 💰 3. Expense Tracking
+- Record detailed expenses with:
+  - Expense name  
+  - Payer  
+  - Amount  
+  - People sharing that expense  
+- Expenses are linked to their group and saved persistently.
+
+### ⚖️ 4. Intelligent Splitting Logic
+- Uses `SimpleSplitService` for precise and optimized settlement calculations.  
+- Automatically computes **who owes whom**, minimizing total transactions.
+
+### 📊 5. Detailed Summary View
+- Displays a full table of:
+  - All members and their net balances  
+  - Each expense contribution  
+  - Simplified list of settlement transactions  
+- Designed for clarity and presentation — perfect for showing in a demo.
+
+### 💾 6. Persistent Data Storage
+- Uses `DataManager` (Java Serialization) to save and load `.esg` files.  
+- Data remains intact even after closing the app.  
+- You can manually save, load, or clear all data.
+
+### 🔁 7. Full Reset Option
+- “Clear All Data” instantly deletes **everything** — groups, members, and expenses.  
+- Reloads the app with a clean state for testing or new groups.
+
+### 🌗 8. Dual Theme Support
+- **Light Theme:** Classic white panels, gray background (your chosen GUI reference).  
+- **Dark Theme:** Elegant dark interface with green accent and smooth transitions.  
+- Toggle instantly without restarting.
+
+### 🎨 9. Modern Swing Interface
+- Polished, consistent layout using `BorderLayout`, `FlowLayout`, and `CardLayout`.  
+- Consistent component sizing (equal-length buttons).  
+- Custom UI utilities like rounded text fields, scrollbars, and panels.  
+- Styled dialogs for light/dark theme consistency.
 
 ---
 
-## 🛠️ Tech Stack
+## 🖥️ User Interface Highlights
 
-| Layer         | Technology                  |
-|---------------|-----------------------------|
-| Language      | Java (JDK 8+)               |
-| UI Framework  | Java Swing                  |
-| Architecture  | MVC (Model-View-Controller) |
-| Persistence   | Java Serialization          |
-| Fonts         | Inter, JetBrains Mono       |
+| View | Description |
+|------|--------------|
+| **Dashboard View** | Central navigation for all features |
+| **Members View** | Manage group members with live updates |
+| **Expenses View** | Add, edit, and review expenses |
+| **Summary View** | View balances and optimized settlements |
+
+The **“View Summary”** button is available from both the Dashboard and the Expenses panel (bottom-aligned).
+
+---
+
+## 🛠️ Technical Overview
+
+| Layer | Description |
+|--------|--------------|
+| **Model** | Data classes for Group, Person, and Expense |
+| **View (GUI)** | Swing panels organized via `MainFrame` |
+| **Service** | Logic for splitting, settlements, and validation |
+| **Util** | File handling, saving/loading group data |
+| **UI** | Theme management, icons, and custom UI components |
 
 ---
 
@@ -67,26 +91,26 @@ Expense-Splitter/
 └── src/
     └── com/
         └── expensesplitter/
-            ├── gui/                 # GUI panels for all app views
+            ├── gui/                 # All GUI Panels
             │   ├── DashboardView.java
             │   ├── MembersView.java
             │   ├── ExpensesView.java
             │   ├── SummaryView.java
             │   └── MainFrame.java
             │
-            ├── main/                # Application entry point
+            ├── main/                # Application Entry Point
             │   └── ExpenseSplitter.java
             │
-            ├── model/               # Core data models
+            ├── model/               # Core Data Models
             │   ├── Person.java
             │   ├── Group.java
             │   └── Expense.java
             │
-            ├── service/             # Logic for splitting expenses
+            ├── service/             # Splitting and Calculation Logic
             │   ├── SplitService.java
             │   └── SimpleSplitService.java
             │
-            ├── ui/                  # Custom UI components & theme
+            ├── ui/                  # UI Theme & Components
             │   ├── UITheme.java
             │   ├── IconFactory.java
             │   └── components/
@@ -94,5 +118,5 @@ Expense-Splitter/
             │       ├── RoundedTextField.java
             │       └── CustomScrollBarUI.java
             │
-            └── util/                # File handling & data persistence
+            └── util/                # File Handling
                 └── DataManager.java
